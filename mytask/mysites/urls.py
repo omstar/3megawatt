@@ -2,6 +2,7 @@ from django.conf.urls import url
 from mysites import views
 
 urlpatterns = [
+    url(r'^$', views.ListMySites.as_view(), name='mysites-list'),
     url(r'^sites/$', views.ListMySites.as_view(), name='mysites-list'),
     url(r'^sites/(?P<pk>\d+)/$', views.MySiteDetail.as_view(), name='site-detail'),
     url(r'^summary/$', views.ListMySitesSum.as_view(), name='mysites-summary sum'),

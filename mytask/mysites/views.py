@@ -1,8 +1,11 @@
 from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from mysites.models import MySite, MySiteValues
 from django.db.models import Sum, Avg
+
+from collections import OrderedDict
+
+from mysites.models import MySite, MySiteValues
 
 class ListMySites(ListView):
     '''
@@ -27,8 +30,8 @@ class ListMySitesSum(ListView):
         context = super(ListMySitesSum, self).get_context_data(**kwargs)
 
         #Python Programming to find sum of A Values and sum of B values
-        sum_dict = {}
-        site_values = MySiteValues.objects.all().values('mysite__name', 'a_value', 'b_value')
+        sum_dict = OrderedDict()
+        site_values = MySiteValues.objects.all().order_by('mysite__id').values('mysite__name', 'a_value', 'b_value')
         for value_dict in site_values:
             if sum_dict.has_key(value_dict['mysite__name']):
                 sum_dict[value_dict['mysite__name']]['a_sum'] += value_dict['a_value']
