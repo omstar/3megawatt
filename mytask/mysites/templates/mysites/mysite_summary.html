@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+          <h3>Summary - Sum</h3>
+          <a href="/summary/"><button type="button" class="btn btn-primary active">Sum</button></a>
+          <a href="/summary-average/"><button type="button" class="btn btn-primary">Average</button></a>
+           <table class="table">
+            <thead>
+              <tr class="info">
+                <th>Site</th> <th>A Value</th> <th>B Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for site, values in sum_dict.iteritems %}
+                <tr class="active">
+                  <td>{{site}}</td>
+                  <td>{{values.a_sum}}</td>
+                  <td>{{values.b_sum}}</td>
+                </tr>
+              {% empty %}
+                 <li>No site values yet.</li>
+              {% endfor %}
+            </tbody>
+{% endblock %}

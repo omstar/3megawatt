@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+          <h3>Summary - Average</h3>
+          <a href="/summary/"><button type="button" class="btn btn-primary">Sum</button></a>
+          <a href="/summary-average/"><button type="button" class="btn btn-primary active">Average</button></a>
+           <table class="table">
+            <thead>
+              <tr class="info">
+                <th>Site</th> <th>A Value</th> <th>B Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for site in sites %}
+                <tr class="active">
+                  <td>{{site.name}}</td>
+                  <td>{{site.avg_a_value|floatformat:2}}</td>
+                  <td>{{site.avg_b_value|floatformat:2}}</td>
+                </tr>
+              {% empty %}
+                 <li>No site values yet.</li>
+              {% endfor %}
+            </tbody>
+{% endblock %}

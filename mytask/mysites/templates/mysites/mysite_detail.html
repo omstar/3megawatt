@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+          <h3>Site Details -{{ object.name }}</h3>
+           <table class="table">
+            <thead>
+              <tr class="info">
+                <th>Date</th> <th>A Value</th> <th>B Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for mysite_values in object.mysitevalues_set.all %}
+                <tr class="active">
+                  <td>{{mysite_values.date}}</td>
+                  <td>{{mysite_values.a_value}}</td>
+                  <td>{{mysite_values.b_value}}</td>
+                </tr>
+              {% empty %}
+                 <li>No site values yet.</li>
+              {% endfor %}
+            </tbody>
+{% endblock %}

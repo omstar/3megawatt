@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+          <h3>Sites</h3>
+          <ul class="list-group">
+            {% for object in object_list %}
+               <li class="list-group-item list-group-item-info"><a href="/sites/{{object.id}}/">{{ object.name }}</a></li>
+            {% empty %}
+               <li>No sites yet.</li>
+            {% endfor %}
+          </ul>
+{% endblock %}
