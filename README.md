@@ -11,3 +11,5 @@ psycopg2==2.7.1
 
 Project Name: project_3megawatt  ;
 App Name: mysites
+
+Inorder to deploy application please use python-virtualenv or do required changes to wsgi file.
