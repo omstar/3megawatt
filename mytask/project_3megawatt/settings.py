@@ -24,7 +24,7 @@ location = lambda x: os.path.join(os.path.dirname(os.path.realpath(__file__)), '
 SECRET_KEY = 'v!+4s@l6*!+-#&^&%cx29)urc+f)ubg+ac%h2irdb73)%kf6ed'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
