@@ -26,7 +26,7 @@ SECRET_KEY = 'v!+4s@l6*!+-#&^&%cx29)urc+f)ubg+ac%h2irdb73)%kf6ed'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
