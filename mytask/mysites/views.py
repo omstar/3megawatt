@@ -9,7 +9,7 @@ from mysites.models import MySite, MySiteValues
 
 class ListMySites(ListView):
     '''
-    List all my sites
+    List all my sites!
     '''
     model = MySite
 
